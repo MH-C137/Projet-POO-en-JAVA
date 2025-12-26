@@ -1,14 +1,18 @@
 package graphes;
 
-public class Noeud{
+import java.util.ArrayList;
+import java.util.Set;
 
-    private Noeud [] voisins;
+public class Noeud{
+    
+    private Set<Noeud> voisins;
     private Object label;
     private int degre;
     private static int nb_noeuds;
 
 
     public Noeud(Object label){
+        this.voisins = new Set();
         this.label = label;
         this.degre = 0;
         nb_noeuds++;
@@ -22,12 +26,16 @@ public class Noeud{
         return this.degre;
     }
     
-    public Noeud getVoisinbyindex(int indice){
+    /*public Noeud getVoisinByIndex(int indice){
         return this.voisins[indice];
+    }*/
+
+    public ArrayList getAllVoisins(){
+        return this.voisins;
     }
 
-    public Noeud [] getAllVoisins(){
-        return this.voisins;
+    public void ajouterVoisin(Noeud v){
+        this.voisins.add(v);
     }
 
     public String toString(){

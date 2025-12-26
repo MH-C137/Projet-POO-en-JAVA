@@ -11,25 +11,41 @@ public class main {
             Graphe graphe = new Graphe();
 
 
-            Object label_1 = new String("Pop");
-            Object label_2 = new String("Hello World");
-            Object label_3 = new String("\n*\n**\n***\n****");
-            Object label_4 = 193;
-            Object label_5 = 9.839;
+            Object label1 = new String("Pop");
+            Object label2 = new String("Hello World");
+            Object label3 = new String("\n*\n**\n***\n****");
+            Object label4 = 193;
+            Object label5 = 9.839;
 
-            Noeud noeud_1 = new Noeud(label_1);
-            Noeud noeud_2 = new Noeud(label_2);
-            Noeud noeud_3 = new Noeud(label_3);
-            Noeud noeud_4 = new Noeud(label_4);
-            Noeud noeud_5 = new Noeud(label_5);
+            Noeud noeud1 = new Noeud(label1);
+            Noeud noeud2 = new Noeud(label2);
+            Noeud noeud3 = new Noeud(label3);
+            Noeud noeud4 = new Noeud(label4);
+            Noeud noeud5 = new Noeud(label5);
 
-            graphe.ajoute_noeud(noeud_1);
-            graphe.ajoute_noeud(noeud_2);
-            graphe.ajoute_noeud(noeud_3);
-            graphe.ajoute_noeud(noeud_4);
-            graphe.ajoute_noeud(noeud_5);
+
+
+            Edge arrete1 = new Edge(noeud1 , noeud2);
+            Edge arrete2 = new Edge(noeud4 , noeud3);
+            Edge arreteBug = new Edge(noeud1, noeud1);
+            Edge arreteDupli = new Edge(noeud1, noeud2);
+
+
+            graphe.ajoute_noeud(noeud1);
+            graphe.ajoute_noeud(noeud2);
+            graphe.ajoute_noeud(noeud3);
+            graphe.ajoute_noeud(noeud4);
+            graphe.ajoute_noeud(noeud5);
+
+            graphe.ajoute_Edge(arrete1);
+            graphe.ajoute_Edge(arrete2);
+            graphe.ajoute_Edge(arreteBug);
+            graphe.ajoute_Edge(arreteDupli);
+
 
             System.out.println(graphe);
+
+            System.out.println((arrete1 = arrete2 )+ arrete1.toString() + arrete2.toString());
 
     }
 
